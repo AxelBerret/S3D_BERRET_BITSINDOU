@@ -1,4 +1,4 @@
-public class TestFormation {
+public class TestIdentite {
 
     public void setup() {
 
