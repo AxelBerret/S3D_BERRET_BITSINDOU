@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43c960c7-aedd-46fb-ad0a-d8516b8c78ea" name="Changes" comment="Ajout de la classe Identité">
-      <change afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/S3D_BERRET_BITSINDOU.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S3D_BERRET_BITSINDOU.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/src/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Formation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/src/Identite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Identite.java" afterDir="false" />
+    <list default="true" id="43c960c7-aedd-46fb-ad0a-d8516b8c78ea" name="Changes" comment="Ajout de la classe Etudiant">
+      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/Test/TestEtudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/Test/TestEtudiant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;O:/Bureau/2ème année/S3-Dvlp web/td8-http&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "O:/Bureau/2ème année/S3-Dvlp web/td8-http",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -63,7 +63,7 @@
       <updated>1695393669633</updated>
       <workItem from="1695393669633" duration="94000" />
       <workItem from="1695717909263" duration="384000" />
-      <workItem from="1695730136741" duration="5644000" />
+      <workItem from="1695730136741" duration="6038000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout de la classe Identité">
       <option name="closed" value="true" />
@@ -73,7 +73,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695733478865</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ajout de la classe Etudiant">
+      <option name="closed" value="true" />
+      <created>1695737609101</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695737609101</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ajout de la classe Identité" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la classe Identité" />
+    <MESSAGE value="Ajout de la classe Etudiant" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la classe Etudiant" />
   </component>
 </project>
