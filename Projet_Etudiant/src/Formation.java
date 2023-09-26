@@ -66,4 +66,11 @@ public class Formation {
      * @param matiere que l on souhaite supprimer de la collection
      */
     public void supprimerMatiere(String matiere) {this.matieresCoeff.remove(matiere);}
+
+    /**
+     * méthode getCoeff
+     */
+    public float getCoeff(String matiere) {
+        return this.matieresCoeff.get(matiere);
+    }
 }

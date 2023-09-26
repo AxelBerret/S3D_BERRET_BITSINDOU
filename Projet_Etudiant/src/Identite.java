@@ -1,4 +1,6 @@
 public class Identite {
+
+    //attributs
     private String NIP;
     private String nom;
     private String prenom;

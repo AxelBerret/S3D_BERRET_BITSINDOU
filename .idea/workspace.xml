@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43c960c7-aedd-46fb-ad0a-d8516b8c78ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="43c960c7-aedd-46fb-ad0a-d8516b8c78ea" name="Changes" comment="Ajout de la classe Identité">
+      <change afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Etudiant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/S3D_BERRET_BITSINDOU.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/S3D_BERRET_BITSINDOU.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Identite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/src/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Formation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projet_Etudiant/src/Identite.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projet_Etudiant/src/Identite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +18,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,11 +63,24 @@
       <updated>1695393669633</updated>
       <workItem from="1695393669633" duration="94000" />
       <workItem from="1695717909263" duration="384000" />
-      <workItem from="1695730136741" duration="2093000" />
+      <workItem from="1695730136741" duration="5644000" />
     </task>
+    <task id="LOCAL-00001" summary="Ajout de la classe Identité">
+      <option name="closed" value="true" />
+      <created>1695733478865</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695733478865</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ajout de la classe Identité" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de la classe Identité" />
   </component>
 </project>
