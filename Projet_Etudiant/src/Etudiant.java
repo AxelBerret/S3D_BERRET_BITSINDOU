@@ -7,6 +7,7 @@ public class Etudiant {
     private Identite identite;
     private HashMap<String, ArrayList<Float>> résultats;
     private Formation formation;
+
     /**
      * constructeur de la classe Etudiant
      */
@@ -21,23 +22,22 @@ public class Etudiant {
      * @param matiere: la matière dans laquelle on veut ajouter la note
      * @param note : la note à ajouter
      */
-    public void ajouterNote (String matiere, Float note){
+    public void ajouterNote(String matiere, Float note) {
         try{
             if (this.résultats.containsKey(matiere) && note >0 && note <=20){
                 this.résultats.get(matiere).add(note);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("La note n'a pas pu être ajoutée");
         }
-
-
     }
+
     /**
      * Méthode calculerMoyenne qui calcule la moyenne d'un étudiant pour une matière entrée en paramètre
      * @param matiere : la matière pour laquelle on veut calculer la moyenne
      * @return la moyenne de l'étudiant pour la matière entrée en paramètre
      */
-    public Float calculerMoyenne(String matiere){
+    public Float calculerMoyenne(String matiere) {
         ArrayList <Float> listeNotes = this.résultats.get(matiere);
         float somme = 0;
         for (Float note : listeNotes){
@@ -45,7 +45,6 @@ public class Etudiant {
         }
         Float res = somme/listeNotes.size();
         return res;
-
     }
 
     /**
@@ -53,7 +52,7 @@ public class Etudiant {
      * avec la prise en compte des coefficients
      * @return la moyenne générale de l'étudiant
      */
-    public Float calculerMoyenneGénérale(){
+    public Float calculerMoyenneGénérale() {
         float somme = 0;
         float sommeCoeff = 0;
         for (String matiere : this.résultats.keySet()){
@@ -63,9 +62,7 @@ public class Etudiant {
         }
         Float res = somme/sommeCoeff;
         return res;
-
     }
 
-
-
+    public HashMap<String, ArrayList<Float>> getResultats() {return this.résultats;}
 }

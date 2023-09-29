@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Identite {
+- NIP : String
+- nom : String
+- prenom : String
++ Identite(num : String, n : String, p : String)
++ getNIP() : String
++ getNom() : String
++ getPrenom() : String
+}
+
+class Formation {
+- id : int
+- matiereCoeff : HashMap<String,Float>
++ obtenirCoeffMatiere(matiere : String) : Float
++ Formation(id : int)
++ ajouterMatiere(matiere : String, coeff : Float)
++ supprimerMatiere(matiere : String)
+}
+
+class Etudiant {
+- identite : Identite
+- formation : Formation
+- rslt : HashMap<String,ArrayList<Float>>
++ Etudiant(id : Identite, formation : Formation)
++ calculerMoyenne(matiere : String) : Float
++ ajouterNote(matiere : String : note) : Float
++ calculerMoyenneGenerale() : Float
+}
+
+class Groupe {
+- etudiants : ArrayList<Etudiant>
+- formation : Formation
++ Groupe(f : Formation)
++ ajouterEtudiant(etudiant : Etudiant)
++ supprimerEtudiant(etudiant : Etudiant)
++ calculerMoyenneGroupe(matiere : String) : Float
++ triAlpha() : ArrayList<Etudiant>
++ triAntiAlpha() : ArrayList<Etudiant>
++ triParMerite() : ArrayList<Etudiant>
+}
+
+
+Identite "1" <-- "1" Etudiant : possède
+Formation "1...*" <-- "1" Etudiant : est dans
+Etudiant "1" <-- "1...*" Groupe : est constitué
+Formation "1" <-- "1...*" Groupe : suit
+
+@enduml
