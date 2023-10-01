@@ -56,9 +56,9 @@ public class Etudiant {
         float somme = 0;
         float sommeCoeff = 0;
         for (String matiere : this.résultats.keySet()){
-            Float coeff = this.formation.getCoeff(matiere);
-            somme += this.calculerMoyenne(matiere)*this.formation.getCoeff(matiere);
-            sommeCoeff += this.formation.getCoeff(matiere);
+            Float coeff = this.formation.obtenirCoeffMatiere(matiere);
+            somme += this.calculerMoyenne(matiere)*this.formation.obtenirCoeffMatiere(matiere);
+            sommeCoeff += this.formation.obtenirCoeffMatiere(matiere);
         }
         Float res = somme/sommeCoeff;
         return res;

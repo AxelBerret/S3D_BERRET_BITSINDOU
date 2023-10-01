@@ -40,14 +40,10 @@ public class Formation {
      * @return le coefficient de la matiere pointee
      */
     public float obtenirCoeffMatiere(String matiere) {
-        float res = -1;
-        boolean find = false;
-        Iterator it = this.matieresCoeff.keySet().iterator();
-        while (it.hasNext() && !find) {
-            if (it.next().equals(matiere)) {
-                res = this.matieresCoeff.get(it.next());
-                find = true;
-            }
+        //si la matiere n existe pas dans la collection
+        Float res = this.matieresCoeff.get(matiere);
+        if (!this.matieresCoeff.containsKey(matiere)) {
+            res = -1.0f;
         }
         return res;
     }
@@ -67,10 +63,5 @@ public class Formation {
      */
     public void supprimerMatiere(String matiere) {this.matieresCoeff.remove(matiere);}
 
-    /**
-     * méthode getCoeff
-     */
-    public float getCoeff(String matiere) {
-        return this.matieresCoeff.get(matiere);
-    }
+
 }
