@@ -39,4 +39,32 @@ public class Groupe {
         this.etudiants.remove(etudiant);
     }
 
+    /**
+     * methode calculerMoyenneGroupe de la classe Groupe
+     * permet de calculer la moyenne du groupe pour une matiere donnee
+     * @return la moyenne du groupe
+     */
+    public Float calculerMoyenneGroupe(String matiere) {
+        float somme = 0;
+        for (Etudiant etudiant : this.etudiants) {
+            somme += etudiant.calculerMoyenne(matiere);
+        }
+        Float res = somme / this.etudiants.size();
+        return res;
+    }
+
+    /**
+     * methode calculerMoyenneGenerale de la classe Groupe
+     * permet de calculer la moyenne générale du groupe
+     * @return la moyenne du groupe
+     */
+    public Float calculerMoyenneGenerale() {
+        float somme = 0;
+        for (Etudiant etudiant : this.etudiants) {
+            somme += etudiant.calculerMoyenneGenerale();
+        }
+        Float res = somme / this.etudiants.size();
+        return res;
+    }
+
 }

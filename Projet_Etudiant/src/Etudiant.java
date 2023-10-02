@@ -5,7 +5,7 @@ public class Etudiant {
 
     //attributs
     private Identite identite;
-    private HashMap<String, ArrayList<Float>> résultats;
+    private HashMap<String, ArrayList<Float>>resultats;
     Formation formation;
 
     /**
@@ -13,7 +13,7 @@ public class Etudiant {
      */
     public Etudiant (Identite id, Formation f){
         this.identite =id;
-        this.résultats = new HashMap<String, ArrayList<Float>>();
+        this.resultats = new HashMap<String, ArrayList<Float>>();
         this.formation = f;
     }
 
@@ -52,7 +52,7 @@ public class Etudiant {
      * avec la prise en compte des coefficients
      * @return la moyenne générale de l'étudiant
      */
-    public Float calculerMoyenneGénérale() {
+    public Float calculerMoyenneGenerale() {
         float somme = 0;
         float sommeCoeff = 0;
         for (String matiere : this.résultats.keySet()){

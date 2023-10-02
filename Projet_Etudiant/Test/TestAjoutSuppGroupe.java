@@ -22,6 +22,10 @@ public class TestAjoutSuppGroupe {
         etudiant = new Etudiant(ide1, formation);
         ide2 = new Identite("456", "Ponroy", "Célie");
         etudiant2 = new Etudiant(ide2, formation);
+        //initialise les notes de l'etudiant
+        etudiant.getResultats().put("Mathematiques", 10.0f);
+        etudiant.getResultats().put("Informatique", 12.0f);
+        etudiant2.getResultats().put("Mathematiques", 20.0f);
 
     }
 
@@ -39,4 +43,6 @@ public class TestAjoutSuppGroupe {
         groupe.supprimerEtudiant(etudiant);
         assertEquals(0, groupe.etudiants.size());
     }
+
+    //
 }
