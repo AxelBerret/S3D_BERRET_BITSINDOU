@@ -6,7 +6,7 @@ public class Etudiant {
     //attributs
     private Identite identite;
     private HashMap<String, ArrayList<Float>> résultats;
-    private Formation formation;
+    Formation formation;
 
     /**
      * constructeur de la classe Etudiant
