@@ -1,68 +1,76 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Etudiant {
+    protected Identite identite;
+    protected Formation formation;
+    protected HashMap<String, List<Float>> resultats;
 
-    //attributs
-    private Identite identite;
-    private HashMap<String, ArrayList<Float>>resultats;
-    Formation formation;
+    public Etudiant(Identite identite, Formation formation) {
+        this.identite = identite;
+        this.formation = formation;
+        this.resultats = new HashMap<>();
 
-    /**
-     * constructeur de la classe Etudiant
-     */
-    public Etudiant (Identite id, Formation f){
-        this.identite =id;
-        this.resultats = new HashMap<String, ArrayList<Float>>();
-        this.formation = f;
-    }
-
-    /**
-     * Méthode ajouterNote qui ajoute la note de l'étudaint à une matière donnée
-     * @param matiere: la matière dans laquelle on veut ajouter la note
-     * @param note : la note à ajouter
-     */
-    public void ajouterNote(String matiere, Float note) {
-        try{
-            if (this.résultats.containsKey(matiere) && note >0 && note <=20){
-                this.résultats.get(matiere).add(note);
-            }
-        } catch (Exception e) {
-            System.out.println("La note n'a pas pu être ajoutée");
+        // Initialisation des listes de résultats pour chaque matière de la formation.
+        for (String matiere : formation.getMatieresCoeff().keySet()) {
+            resultats.put(matiere, new ArrayList<>());
         }
     }
 
-    /**
-     * Méthode calculerMoyenne qui calcule la moyenne d'un étudiant pour une matière entrée en paramètre
-     * @param matiere : la matière pour laquelle on veut calculer la moyenne
-     * @return la moyenne de l'étudiant pour la matière entrée en paramètre
-     */
-    public Float calculerMoyenne(String matiere) {
-        ArrayList <Float> listeNotes = this.résultats.get(matiere);
+    public void ajouterNote(String matiere, float note) {
+        if (note < 0 || note > 20) {
+            throw new IllegalArgumentException("La note n'est pas valide : doit être entre 0 et 20.");
+        }
+
+        List<Float> notesMatiere = resultats.get(matiere);
+        if (notesMatiere == null) {
+            throw new IllegalArgumentException("La matière n'existe pas dans la formation.");
+        }
+
+        notesMatiere.add(note);
+    }
+
+    public float calculerMoyenne(String matiere) {
+        List<Float> notesMatiere = resultats.get(matiere);
+        if (notesMatiere == null || notesMatiere.isEmpty()) {
+            return 0.0f; // Aucune note disponible, moyenne par défaut.
+        }
+
         float somme = 0;
-        for (Float note : listeNotes){
+        for (Float note : notesMatiere) {
             somme += note;
         }
-        Float res = somme/listeNotes.size();
-        return res;
+        return somme / notesMatiere.size();
     }
 
-    /**
-     * Méthode calculerMoyenneGénérale qui calcule la moyenne générale de l'étudiant
-     * avec la prise en compte des coefficients
-     * @return la moyenne générale de l'étudiant
-     */
-    public Float calculerMoyenneGenerale() {
-        float somme = 0;
-        float sommeCoeff = 0;
-        for (String matiere : this.résultats.keySet()){
-            Float coeff = this.formation.obtenirCoeffMatiere(matiere);
-            somme += this.calculerMoyenne(matiere)*this.formation.obtenirCoeffMatiere(matiere);
-            sommeCoeff += this.formation.obtenirCoeffMatiere(matiere);
+    public float calculerMoyenneGenerale() {
+        float sommePonderee = 0;
+        float sommeCoefficients = 0;
+
+        for (String matiere : formation.getMatieresCoeff().keySet()) {
+            float coefficient = formation.obtenirCoeffMatiere(matiere);
+            List<Float> notesMatiere = resultats.get(matiere);
+
+            if (coefficient <= 0) {
+                throw new IllegalArgumentException("Le coefficient de la matière est invalide : " + matiere);
+            }
+
+            if (notesMatiere != null && !notesMatiere.isEmpty()) {
+                float moyenneMatiere = calculerMoyenne(matiere);
+                sommePonderee += moyenneMatiere * coefficient;
+                sommeCoefficients += coefficient;
+            }
         }
-        Float res = somme/sommeCoeff;
-        return res;
+
+        if (sommeCoefficients == 0) {
+            throw new ArithmeticException("Division par zéro : sommeCoefficients est égal à zéro.");
+        }
+
+        return sommePonderee / sommeCoefficients;
     }
 
-    public HashMap<String, ArrayList<Float>> getResultats() {return this.résultats;}
+    public HashMap<String, List<Float>> getResultats() {
+        return resultats;
+    }
 }

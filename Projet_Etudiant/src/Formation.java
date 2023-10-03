@@ -7,7 +7,7 @@ public class Formation {
      * attribut id de la classe Formation
      * represente l identifiant de la formation
      */
-    private int id;
+    protected int id;
 
     /**
      * attribut matieresCoeff de la classe Formation
@@ -23,7 +23,7 @@ public class Formation {
      * @param pId identifiant que l on souhaite donner a la formation
      */
     public Formation(int pId) {
-        this.id = id;
+        this.id = pId;
         this.matieresCoeff = new HashMap<String, Float>();
     }
 
@@ -40,12 +40,12 @@ public class Formation {
      * @return le coefficient de la matiere pointee
      */
     public float obtenirCoeffMatiere(String matiere) {
-        //si la matiere n existe pas dans la collection
-        Float res = this.matieresCoeff.get(matiere);
-        if (!this.matieresCoeff.containsKey(matiere)) {
-            res = -1.0f;
+        // Vérifie si la matière existe dans la collection
+        if (matieresCoeff.containsKey(matiere)) {
+            return matieresCoeff.get(matiere);
+        } else {
+            return -1.0f; // Si la matière n'est pas trouvée, retourne -1.0f
         }
-        return res;
     }
 
     /**
@@ -64,4 +64,10 @@ public class Formation {
     public void supprimerMatiere(String matiere) {this.matieresCoeff.remove(matiere);}
 
 
+    /**
+     * méthode getMatieresCoeff de la classe Formation
+     */
+    public HashMap<String, Float> getMatieresCoeff() {
+        return matieresCoeff;
+    }
 }
