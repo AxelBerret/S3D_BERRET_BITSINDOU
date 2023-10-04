@@ -47,11 +47,17 @@ public class Groupe {
      */
     public Float calculerMoyenneGroupe(String matiere) {
         float somme = 0;
+        int nbEtu = 0;
         for (Etudiant etudiant : this.etudiants) {
-            somme += etudiant.calculerMoyenne(matiere);
+            if(etudiant.resultats.containsKey(matiere)){
+                somme += etudiant.calculerMoyenne(matiere);
+                nbEtu = this.etudiants.size();
+            }else{
+                nbEtu = this.etudiants.size()-1;
+            }
+
         }
-        Float res = somme / this.etudiants.size();
-        return res;
+        return somme / nbEtu;
     }
 
     /**
