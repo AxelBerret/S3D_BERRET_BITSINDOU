@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Groupe {
 
@@ -67,4 +68,27 @@ public class Groupe {
         return res;
     }
 
+    public void triAlpha() {
+        for (int i = 0; i < this.etudiants.size()-1; i++) {
+            for (int j = 0; j < this.etudiants.size()-i-1; j++) {
+                if (this.etudiants.get(j).identite.getNom().compareTo(this.etudiants.get(j+1).identite.getNom()) > 0) {
+                    Etudiant tmp = this.etudiants.get(j);
+                    this.etudiants.set(j, this.etudiants.get(j+1));
+                    this.etudiants.set(j+1, tmp);
+                }
+            }
+        }
+    }
+
+    public void triAntiAlpha() {
+        for (int i = 0; i < this.etudiants.size()-1; i++) {
+            for (int j = 0; j < this.etudiants.size()-i-1; j++) {
+                if (this.etudiants.get(j).identite.getNom().compareTo(this.etudiants.get(j+1).identite.getNom()) < 0) {
+                    Etudiant tmp = this.etudiants.get(j);
+                    this.etudiants.set(j, this.etudiants.get(j+1));
+                    this.etudiants.set(j+1, tmp);
+                }
+            }
+        }
+    }
 }
